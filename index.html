@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="shortcut icon" href="https://swp.autoever.com/img/favicon.png">
+    <link rel="icon" herf="https://swp.autoever.com//img/favicon.png">
+    <title>App Download</title>
+    <link rel="stylesheet" href="https://swp.autoever.com/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://swp.autoever.com/css/common.css">
+    <script src="https://swp.autoever.com/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="https://swp.autoever.com/js/lib/bootstrap.min.js"></script>
+</head>
+<script>
+    function validateAgreement(className) {
+        var checked = document.getElementById("check1").checked;
+        if(!checked) {
+            $('#downcheck').modal('show');
+            return false;
+        }
+        document.location.href = document.getElementsByClassName(className)[0].href;
+        return false;
+    }
+</script>
+<body class="download_page">
+<div class="down_wrap">
+    <div class="down_text">
+        <span ></span>
+        <p class="d_tit">언제 어디서나 편리하게<br/>
+            <span class="fonteb">디지털 라이프 Rudolf</span>
+        </p>
+        
+        <a class="down_btn ios" href="itms-services://?action=download-manifest&url=manifest.plist" onclick="return validateAgreement('ios');">iOS APP 다운로드
+             <span class="d_version">(v1.0.0)</span></a>
+             
+        <a class="down_btn aos" href="app_test_v0.1.apk" type="application/vnd.android.package-archive" onclick="return validateAgreement('aos');">Android APP 다운로드 
+            <span class="d_version">(v1.0.0)</span></a>
+        <ul class="form-list">
+            <li>
+                <div class="check-basic">
+                    <input type="checkbox" id="check1">
+                    <label for="check1">보안준수사항에 동의합니다.</label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+</div>
+
+<!-- Modal type1-->
+<div class="modal fade alert1" id="downcheck" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body">
+                <p class="modal-title">보안준수사항을 체크해주세요.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
